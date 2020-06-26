@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="qXO-c2-4fj" customClass="MenuCell" customModule="HomeSecurityDemoApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qXO-c2-4fj" id="rYy-up-Mia">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPj-Sq-eFc" userLabel="Menu title">
+                        <rect key="frame" x="52" y="12" width="64" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_sensors" translatesAutoresizingMaskIntoConstraints="NO" id="znl-HQ-AhE" userLabel="Menu icon">
+                        <rect key="frame" x="16" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="PWc-14-PQU"/>
+                            <constraint firstAttribute="height" constant="20" id="e6Q-MB-fFM"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qPj-Sq-eFc" firstAttribute="centerY" secondItem="rYy-up-Mia" secondAttribute="centerY" id="GbY-Hq-Gor"/>
+                    <constraint firstItem="znl-HQ-AhE" firstAttribute="centerY" secondItem="rYy-up-Mia" secondAttribute="centerYWithinMargins" id="b4E-dG-Kav"/>
+                    <constraint firstItem="znl-HQ-AhE" firstAttribute="leading" secondItem="rYy-up-Mia" secondAttribute="leading" constant="16" id="qDn-ye-R8Q"/>
+                    <constraint firstItem="qPj-Sq-eFc" firstAttribute="leading" secondItem="znl-HQ-AhE" secondAttribute="trailing" constant="16" id="xBw-HW-gH5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="icon" destination="znl-HQ-AhE" id="a78-he-fGy"/>
+                <outlet property="title" destination="qPj-Sq-eFc" id="dd8-JA-gyb"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="menu_sensors" width="20" height="20"/>
+    </resources>
+</document>

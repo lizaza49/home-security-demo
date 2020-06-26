@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="HomeSecurityDemoApp" customModuleProvider="target">
+            <connections>
+                <outlet property="atHomeMembersContainer" destination="KuI-ds-44F" id="0kq-BS-Eec"/>
+                <outlet property="securedButtonContainer" destination="pqG-FW-Yu9" id="DNm-kw-ErU"/>
+                <outlet property="sensorsContainer" destination="8wy-F3-owx" id="yn7-QL-WqW"/>
+                <outlet property="view" destination="iN0-l3-epB" id="KB7-7H-okp"/>
+                <outlet property="widgetsContentScrollView" destination="bgv-Ha-nil" id="46h-h4-vyr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgH-Jg-mIY" userLabel="Content">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgv-Ha-nil">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="85r-tx-IgJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqG-FW-Yu9" userLabel="SecuredButton">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="Ugb-eJ-cIZ"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuI-ds-44F" userLabel="AtHome">
+                                            <rect key="frame" x="0.0" y="128" width="320" height="151"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="151" id="JLS-av-fAp"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-F3-owx" userLabel="Sensors">
+                                            <rect key="frame" x="0.0" y="279" width="320" height="151"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="151" id="xYu-BL-SPc"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="85r-tx-IgJ" firstAttribute="leading" secondItem="bgv-Ha-nil" secondAttribute="leading" id="1zi-pE-fdr"/>
+                                <constraint firstAttribute="trailing" secondItem="85r-tx-IgJ" secondAttribute="trailing" id="dYv-Mz-sr7"/>
+                                <constraint firstAttribute="bottom" secondItem="85r-tx-IgJ" secondAttribute="bottom" id="e1a-MV-rzg"/>
+                                <constraint firstItem="85r-tx-IgJ" firstAttribute="width" secondItem="bgv-Ha-nil" secondAttribute="width" id="k4T-8X-6dI"/>
+                                <constraint firstItem="85r-tx-IgJ" firstAttribute="top" secondItem="bgv-Ha-nil" secondAttribute="top" id="yAU-Zd-Ses"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="bgv-Ha-nil" firstAttribute="top" secondItem="dgH-Jg-mIY" secondAttribute="top" id="5IX-I9-ppf"/>
+                        <constraint firstItem="bgv-Ha-nil" firstAttribute="centerY" secondItem="dgH-Jg-mIY" secondAttribute="centerY" id="Apw-FD-jwz"/>
+                        <constraint firstItem="bgv-Ha-nil" firstAttribute="centerX" secondItem="dgH-Jg-mIY" secondAttribute="centerX" id="CFH-YS-Bwb"/>
+                        <constraint firstItem="bgv-Ha-nil" firstAttribute="leading" secondItem="dgH-Jg-mIY" secondAttribute="leading" id="R4q-Nn-bap"/>
+                        <constraint firstAttribute="trailing" secondItem="bgv-Ha-nil" secondAttribute="trailing" id="dxK-RJ-DnU"/>
+                        <constraint firstAttribute="bottom" secondItem="bgv-Ha-nil" secondAttribute="bottom" id="t7f-xb-Dwz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="dgH-Jg-mIY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5s7-To-Phj"/>
+                <constraint firstAttribute="bottom" secondItem="dgH-Jg-mIY" secondAttribute="bottom" id="8ey-2B-myL"/>
+                <constraint firstItem="dgH-Jg-mIY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ptq-Nj-3my"/>
+                <constraint firstAttribute="trailing" secondItem="dgH-Jg-mIY" secondAttribute="trailing" id="y2K-og-jQH"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

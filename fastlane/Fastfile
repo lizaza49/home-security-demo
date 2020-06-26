@@ -1,0 +1,110 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+# opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.66.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    ensure_git_status_clean
+    git_pull
+    clean_cocoapods_cache
+    cocoapods
+  end
+
+  lane :test do
+    scan
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  desc "This will also make sure the profile is up to date. Takes the following arguments: \n"
+  desc ":skip_submission    do not upload Build to Crashlitycs"
+  desc ":skip_version_bump  skip incrementing build version"
+  lane :beta do |options|
+    skip_submission = options[:skip_submission]
+    skip_version_bump = options[:skip_version_bump]
+    unless skip_version_bump
+      increment_build_number
+    end
+    match(type: "adhoc", readonly: true, force_for_new_devices: true) # more information: https://codesigning.guide
+    badge(shield: ("Version-" + get_version_number + "." + get_build_number + "-blue"), no_badge: false, dark: true, shield_no_resize: true)
+    gym(output_directory: "./Builds/", configuration: "Internal Beta", export_method: "ad-hoc", use_legacy_build_api: true) # Build your app - more options available
+    unless skip_version_bump
+      commit_version_bump(force: true)
+      push_to_git_remote
+      add_git_tag(tag: "v" + get_version_number + "." + get_build_number)
+      push_git_tags
+    end
+    unless skip_submission
+      crashlytics(crashlytics_path: "./Pods/Crashlytics/iOS/Crashlytics.framework/", ipa_path: "./Builds/HomeSecurityDemoApp.ipa", 
+        groups: ['HomeSecurityTesters'], api_token: "c1eaad2ff03d077188e6a5df2aef83f2f6f115c2", 
+        build_secret: "6b6e47129d5f12b1f0c4bc96a22cad0efe519ca43dc5ead596ce8de58aae2df6",
+        notifications: true, debug: true)
+    end
+    # You can also use other beta testing services here (run `fastlane actions`)
+  end
+
+desc "Submit a new Beta Build to Apple Test Flight"
+  desc "This will also make sure the profile is up to date. Takes the following arguments: \n"
+  desc ":skip_submission    do not upload Build to Test Flight"
+  desc ":skip_version_bump  skip incrementing build version"
+  lane :apple_beta do |options|
+    skip_submission = options[:skip_submission]
+    skip_version_bump = options[:skip_version_bump]
+    unless skip_version_bump
+      increment_build_number
+    end
+    match(type: "appstore", readonly: true, force_for_new_devices: true) # more information: https://codesigning.guide
+    badge(shield: ("Version-" + get_version_number + "." + get_build_number + "-blue"), no_badge: false, dark: true, shield_no_resize: true)
+    gym(output_directory: "./Builds/", configuration: "Appstore", export_method: "app-store", use_legacy_build_api: false) # Build your app - more options available
+    unless skip_version_bump
+      commit_version_bump(force: true)
+      push_to_git_remote
+      add_git_tag(tag: "v" + get_version_number + "." + get_build_number)
+      push_git_tags
+    end
+    unless skip_submission
+      pilot(ipa: "./Builds/HomeSecurityDemoApp.ipa", skip_submission: true)
+    end
+    # You can also use other beta testing services here (run `fastlane actions`)
+  end
+
+  # You can define as many lanes as you want
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+    reset_git_repo(skip_clean: true)
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    reset_git_repo(skip_clean: true)
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end
+
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/docs/Actions.md

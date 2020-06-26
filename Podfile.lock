@@ -1,0 +1,58 @@
+PODS:
+  - Alamofire (3.5.0)
+  - APIKit (2.0.5):
+    - Result (~> 2.1.1)
+  - Crashlytics (3.8.1):
+    - Fabric (~> 1.6.3)
+  - Elevate (1.0.0)
+  - Fabric (1.6.8)
+  - Locksmith (2.0.8)
+  - Refresher (0.5.0)
+  - Result (2.1.3)
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxDataSources (0.9):
+    - RxCocoa (~> 2.2)
+    - RxSwift (~> 2.2)
+  - RxSwift (2.6.0)
+  - HomeSecurityAPI (0.0.4):
+    - APIKit (= 2.0.5)
+    - Elevate (= 1.0.0)
+    - Locksmith (= 2.0.8)
+    - RxSwift (= 2.6.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Crashlytics
+  - Fabric
+  - Refresher
+  - RxCocoa
+  - RxDataSources
+  - HomeSecurityAPI (from `API git here`)
+
+EXTERNAL SOURCES:
+  HomeSecurityAPI:
+    :git: API git here
+
+CHECKOUT OPTIONS:
+  HomeSecurityAPI:
+    :commit: 7d3b21907dae88bsxhgcuyd7da1de09a9f67e
+    :git: API git here
+
+SPEC CHECKSUMS:
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  APIKit: c78ad25192db1a2b0703d888c0a7cbb8127102f8
+  Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
+  Elevate: 3305d88a35fa3536639133e1670962cefbd95725
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  Locksmith: a8ed41ac4c06506ea8cb199d8ec8a8d3d108eb2a
+  Refresher: 485f5990e6315add7f3470db5a4ca106451b11d3
+  Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxDataSources: e169bba94a7be584df7c1e1487fa56edc8753ae6
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+  HomeSecurityAPI: 4c311afb8d67ecc9fcb49e4cc5a4cd99d48835dc
+
+PODFILE CHECKSUM: 7d8247274f88595a21bcfe044f61d158cc8285f1
+
+COCOAPODS: 1.4.0

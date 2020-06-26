@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-r6-YVw" userLabel="Content">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="Qah-sB-cBK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4e4-r6-YVw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="20e-3C-R0f"/>
+                <constraint firstItem="4e4-r6-YVw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N65-5n-VyP"/>
+                <constraint firstAttribute="trailing" secondItem="4e4-r6-YVw" secondAttribute="trailing" id="TzU-y8-Tek"/>
+                <constraint firstAttribute="bottom" secondItem="4e4-r6-YVw" secondAttribute="bottom" id="nsy-aL-E7o"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

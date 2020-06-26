@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17F77" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNumberController" customModule="HomeSecurityDemoApp" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="wsK-Gf-Huo" id="sPM-yf-j4p"/>
+                <outlet property="view" destination="iN0-l3-epB" id="k9m-fv-gS4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="SecondScreen" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YcC-5Q-THp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wsK-Gf-Huo">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="nOw-Dk-mwx"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wsK-Gf-Huo" secondAttribute="bottom" id="Jzo-CR-Y63"/>
+                        <constraint firstAttribute="trailing" secondItem="wsK-Gf-Huo" secondAttribute="trailing" id="q4j-jR-QhQ"/>
+                        <constraint firstItem="wsK-Gf-Huo" firstAttribute="top" secondItem="YcC-5Q-THp" secondAttribute="top" id="sPW-TB-oXm"/>
+                        <constraint firstItem="wsK-Gf-Huo" firstAttribute="leading" secondItem="YcC-5Q-THp" secondAttribute="leading" id="zSs-8p-34t"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YcC-5Q-THp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ju1-Et-fc2"/>
+                <constraint firstAttribute="bottom" secondItem="YcC-5Q-THp" secondAttribute="bottom" id="Sg7-OL-rcu"/>
+                <constraint firstItem="YcC-5Q-THp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="V1s-hw-Top"/>
+                <constraint firstAttribute="trailing" secondItem="YcC-5Q-THp" secondAttribute="trailing" id="e3N-C8-JLH"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

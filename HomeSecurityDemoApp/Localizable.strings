@@ -1,0 +1,19 @@
+/*
+  Localizable.strings
+  HomeSecurityDemoApp
+
+  Created by Admin on 19.07.16.
+  Copyright © 2016 Admin. All rights reserved.
+*/
+
+"sensor.purpose.door" = "Door";
+"sensor.purpose.window" = "Window";
+"phone.priority.primary" = "Primary";
+"phone.priority.secondary" = "Secondary";
+
+"eu.homesecurity.error_enabling_secured_mode" = "Error while enabling secured mode";
+"eu.homesecurity.secured_mode_on" = "Secured mode enabled";
+"eu.homesecurity.secured_mode_off" = "Secured mode disabled";
+"eu.homesecurity.unauthorized_access" = "Sensor \"%@\" reported unauthorized access";
+"eu.homesecurity.answered_call" = "The alert call was answered by %@";
+"eu.homesecurity.user_registered" = "You have been registered!";
